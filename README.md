@@ -7,7 +7,7 @@ CW4 - List of Objects <a href="https://cagriege.github.io/ileriProgramlama/ListO
 
 
 # HomeWorks
-HW1 - Poisson Table <a href="https://cagriege.github.io/ileriProgramlama/HW1.html"><b>view</b></a>-<a href="https://github.com/cagriege/ileriProgramlama/blob/master/HW1.html"><b>source</b></a>
+HW1 - Poisson Table <a href="https://cagriege.github.io/ileriProgramlama/HW1/HW1.html"><b>view</b></a>-<a href="https://github.com/cagriege/ileriProgramlama/blob/master/HW1/HW1.html"><b>source</b></a>
 <br></td>
 
 # Project
