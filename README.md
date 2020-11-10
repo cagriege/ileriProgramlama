@@ -1,5 +1,7 @@
 # İleriProgramlama
 # ClassWorks
+CW8 - File operations <a href="https://cagriege.github.io/ileriProgramlama/CW8/CW8.html"><b>view</b></a>-<a href="https://github.com/cagriege/ileriProgramlama/blob/master/CW8/CW8.html"><b>source</b></a>
+<br></td>
 CW7 - Student Database <a href="https://cagriege.github.io/ileriProgramlama/CW7.html"><b>view</b></a>-<a href="https://github.com/cagriege/ileriProgramlama/blob/master/CW7.html"><b>source</b></a>
 <br></td>
 CW6 - Callbacks and Promises <a href="https://cagriege.github.io/ileriProgramlama/CW6.html"><b>view</b></a>-<a href="https://github.com/cagriege/ileriProgramlama/blob/master/CW6.html"><b>source</b></a>
