@@ -275,7 +275,7 @@ class Course {
             maptime=maptime+performance.now()-mtime;
         }
         let s = "Map timing"+":"+countMap+"result founded in "+maptime.toPrecision(3)+" miliseconds \n"+"Array timing"+":"+countArray+"result founded in "+arraytime.toPrecision(3)+" miliseconds \n"
-       // out.innerText += "\n"+s; 
+       out.innerText += "\n"+s; 
          console.log(s)
         }
 }
