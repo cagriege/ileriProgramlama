@@ -21,6 +21,8 @@ CW2 - Making a Webpage <a href="https://cagriege.github.io/ileriProgramlama/CW2/
 # HomeWorks
 HW1 - Poisson Table <a href="https://cagriege.github.io/ileriProgramlama/HW1/HW1.html"><b>view</b></a>-<a href="https://github.com/cagriege/ileriProgramlama/blob/master/HW1/HW1.html"><b>source</b></a>
 <br></td>
+HW2 - Student Database <a href="https://cagriege.github.io/ileriProgramlama/HW2/index.html"><b>view</b></a>-<a href="https://github.com/cagriege/ileriProgramlama/blob/master/HW2/index.html"><b>source</b></a>
+<br></td>
 
 # Project
 
