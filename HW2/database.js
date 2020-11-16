@@ -1,3 +1,6 @@
+Students1 = new Map();
+const keys3 = []
+var randomArray = []
 class Course {
     constructor(coursename,examtime,examdate,room){
     this.coursename=coursename
@@ -57,8 +60,10 @@ class Course {
        for (let s of a) {
          let student = this.parseStudent(s);
          this.Students.set(student.id,student);
+         Students1.set(student.id,student);
          this.keys1.push(student.id);
          this.vals1.push(student);
+         keys3.push(student.id);
         
         
        }
@@ -214,7 +219,7 @@ class Course {
         }
         console.log(msg);
     }
-    mapRandomSearch(...Students){     
+    mapRandomSearch(Students1){     
         countMap=0;
         for(let i=0; i<10000;i++){
             //let firstNine=Math.floor(Math.random()*(116700070-116690070+1)+116690070).toString(); //wide range
@@ -225,12 +230,12 @@ class Course {
             } 
             return countMap
     }
-    arrayRandomSearch(...keys1){
+    arrayRandomSearch(keys3){
         countArray=0;
         for(let i=0; i<10000;i++){
             //let firstNine=Math.floor(Math.random()*(116700070-116690070+1)+116690070).toString(); //wide range
             let firstNine=Math.floor(Math.random()*(116690916-116690070+1)+116690070).toString(); //for more results
-            if(array.includes(firstNine)==true){
+            if(keys3.includes(firstNine)==true){
                 countArray++
             }
         }
@@ -251,7 +256,6 @@ class Course {
         out.innerText += "\n"+s; console.log(s)
     }
     timing(){
-        keys1=this.keys1
         let countMap=0;
         let countArray=0;
         let maptime=0;
@@ -260,12 +264,12 @@ class Course {
             //let firstNine=Math.floor(Math.random()*(116700070-116690070+1)+116690070).toString(); 
             let firstNine=Math.floor(Math.random()*(116690916-116690070+1)+116690070).toString(); //for more results
             let atime=performance.now();
-            if(keys1.includes(firstNine)==true){
+            if(keys3.includes(firstNine)==true){
                 countArray++
             }
             arraytime=arraytime+performance.now()-atime; 
             let mtime=performance.now();
-            if (Students.has(firstNine)==true) {
+            if (Students1.has(firstNine)==true) {
                 countMap++
             }
             maptime=maptime+performance.now()-mtime;
