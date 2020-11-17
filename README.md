@@ -1,6 +1,6 @@
 # İleriProgramlama
 # ClassWorks
-CW10 - Page made by JS <a href="https://cagriege.github.io/ileriProgramlama/CW10.html"><b>view</b></a>-<a href="https://github.com/cagriege/ileriProgramlama/blob/master/CW10.html"><b>source</b></a>
+CW10 - ArrayBuffer & Crypto <a href="https://cagriege.github.io/ileriProgramlama/CW10.html"><b>view</b></a>-<a href="https://github.com/cagriege/ileriProgramlama/blob/master/CW10.html"><b>source</b></a>
 <br></td>
 CW9 - Page made by JS <a href="https://cagriege.github.io/ileriProgramlama/CW9/CW9.html"><b>view</b></a>-<a href="https://github.com/cagriege/ileriProgramlama/blob/master/CW9/CW9.html"><b>source</b></a>
 <br></td>
