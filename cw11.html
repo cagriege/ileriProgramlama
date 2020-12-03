@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+
+    <title>CW11 </title>
+
+  <style> /* CSS comment */
+    body { max-width: 440px; }
+    #url { width: 190px; }
+    span, #url { color: blue; }
+  </style>
+</head>
+
+<body>   <!-- HTML comment: Modify all items marked xxx -->
+
+<h2 id=title title="Modify xxx"></h2>
+
+<h2>Battery Status</h2>
+<div id="level"></div>
+<div id="chargingTime"></div>
+<div id="isCharging"></div>
+<hr />
+
+
+<h2>Online Status</h2>
+<div id="isStatus">online status</div>
+<hr />
+<h2>Keyboard</h2>
+<p id="keyboard">Press Any Button</p>
+<hr />
+
+
+<hr />
+
+<script>
+"use strict";
+// JavaScript comment
+navigator.getBattery().then(function(battery) {
+    if (battery.charging) {
+        isCharging.textContent="Computer is Charging"
+    } else {
+        isCharging.textContent="Low Battery"
+    }
+});
+navigator.getBattery().then(function(battery) {
+
+   battery.onchargingchange = chargingChange();
+
+   function chargingChange() {
+      document.querySelector('#level').textContent = "Charge %"+battery.level*100;
+      document.querySelector('#chargingTime').textContent ="Charging Time: "+ battery.chargingTime;
+   }
+});
+if (navigator.onLine) {
+  isStatus.textContent="connected--online"
+} else {
+  isStatus.textContent="disconnected-offline"
+}
+document.body.addEventListener('keyup', function(event) {
+  keyboard.textContent="Pressed Key is :  "+event.key
+});
+
+</script>
+
+</body>
+</html>
