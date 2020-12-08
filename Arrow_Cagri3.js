@@ -1,4 +1,4 @@
-class Arrow_Cagri extends Animator  {
+class Arrow_Cagri3 extends Animator  {
     constructor() {
         super();
         this.author = 'Çağrı Ege'
