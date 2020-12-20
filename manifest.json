@@ -5,7 +5,7 @@
   "background_color": "cyan",
   "icons": [
     {
-      "src": "main/images/JS.png",
+      "src": "/blob/main/JS.png",
       "sizes": "192x192",
       "type": "image/png"
     }
