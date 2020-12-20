@@ -1,5 +1,5 @@
 const CACHE ='AdvancedProgramming'
-const FILES = ['/ileriProgramlama/CW2/CW2.html', '/ileriProgramlama/ListOfObjects/ListofObjects.html', '/ileriProgramlama/Cw5/cw5.html', '/ileriProgramlama/CW6.html','/ileriProgramlama/CW7.html','/ileriProgramlama/CW8/CW8.html', '/ileriProgramlama/CW9/CW9.html','/ileriProgramlama/CW10.html','/ileriProgramlama/cw11.html','/ileriProgramlama/CW12.html','/ileriProgramlama/CW13.html','/ileriProgramlama/HW1/HW1.html','/ileriProgramlama/HW2/index.html','/ileriProgramlama/TermProject/cagriproje.html.html']
+const FILES = ['/ileriProgramlama/CW2/CW2.html', '/ileriProgramlama/ListOfObjects/ListofObjects.html', '/ileriProgramlama/Cw5/cw5.html', '/ileriProgramlama/CW6.html','/ileriProgramlama/CW7.html','/ileriProgramlama/CW8/CW8.html', '/ileriProgramlama/CW9/CW9.html','/ileriProgramlama/CW10.html','/ileriProgramlama/cw11.html','/ileriProgramlama/CW12.html','/ileriProgramlama/CW13.html','/ileriProgramlama/HW1/HW1.html','/ileriProgramlama/HW2/index.html','/ileriProgramlama/TermProject/cagriproje.html']
 function installCB(e) {
   e.waitUntil(
     caches.open(CACHE)
