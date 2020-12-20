@@ -5,7 +5,7 @@
   "background_color": "cyan",
   "icons": [
     {
-      "src": "/blob/main/JS.png",
+      "src": "ileriProgramlama/JS.png",
       "sizes": "192x192",
       "type": "image/png"
     }
