@@ -219,6 +219,18 @@ label {
   text-align:center;
   width:250px;
 }
+#temizleButon{
+	
+    margin-left: 150px;
+    margin-bottom: 15px;
+    font-size: 1.6rem;
+    font-weight: 400;
+    text-indent: 0.2rem;
+    text-align: center;
+    width: 250px;
+	
+	
+}
 #irsaliye{
 	margin-left:0px;
 	margin-bottom:15px;
