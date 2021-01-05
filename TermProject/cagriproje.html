@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
  <title>
-            Fatura Yazdırma Ekranı | Çağrı Ege
+            E-Fatura | Çağrı Ege
         </title>
 
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css'><link rel="stylesheet" href="./style.css">
@@ -55,9 +55,20 @@
 		this.musteriler	= new Map();
 		this.siparisler	= new Map();
         this.readList();
-        
+        this.randomMusteri();
         }
-        
+        randomMusteri(){
+		var musteri1=new  Musteri('bireysel','Şeref','EgelerMobilya','288666551','GOP',['05538029053','ss','sd']);
+		var musteri2=new  Musteri('bireysel','Cihad','EgelerMobilya','388666551','GOP',['05538029053','ssd','ddsd']);
+		var musteri= new  Musteri('bireysel','Çağrı','EgelerMobilya','188666554','Eyüp',['05538029053','sdsd','sdsd']);
+			
+			this.musteriler.set('188666554',musteri);
+			this.musteriler.set('388666551',musteri1);
+			this.musteriler.set('288666551',musteri2);
+		
+		
+		}
+		
         readList() {
             console.log("read urunList "+this.urlS);
             fetch(this.urlS)
@@ -90,6 +101,21 @@
     return urun
 }
 
+temizle2()
+{
+			var iletisim=[];
+            document.getElementById("adiSoyadi").value='';
+			document.getElementById("sirketUnvan").value='';
+			document.getElementById("vergiDaire").value='';
+			
+		document.getElementById("adres").value='';
+		document.getElementById("telefon").value='';
+		document.getElementById("eposta").value='';
+			
+			
+			document.getElementById("vergiNo").value='';
+
+}
 	musteriEkle(){
 			var iletisim=[];
             var adsoyad= document.getElementById("adiSoyadi").value;
@@ -120,7 +146,7 @@
 	}
     
         }
-       db = new Database();
+       db = new Database(); 
 
 </script>
 <!-- partial:index.partial.html -->
@@ -150,22 +176,24 @@
 			 <option value="kurumsal">Kurumsal</option>
         </select><br>
         <label for="adiSoyadi" >Adı Soyadı</label>
-        <input type="text" id="adiSoyadi" required><br>
+        <input type="text" id="adiSoyadi" value='Çağrı'required><br>
 
         <label for="sirketUnvan">Şirket Unvanı</label>
-        <input type="text" id="sirketUnvan" required><br>
+        <input type="text" id="sirketUnvan" value='EgelerMobilya' required><br>
 
         <label for="vergiDaire">Vergi Dairesi</label>
-        <input type="text" id="vergiDaire" required><br>
+        <input type="text" id="vergiDaire" value='GOP' required><br>
 
         <label for="vergiNo">Vergi & Tc No</label>
-        <input type="number" id="vergiNo" pattern=".{10,11}" required><br>
+        <input type="number" id="vergiNo" pattern=".{10,11}" value='1234567891' required><br>
       
         
-        <label for="vergiNo">Adres</label><input type="text" id="adres" required><br>
-        <label for="vergiNo">Telefon</label><input type="number" id="telefon" required><br>
-        <label for="vergiNo">E- Posta</label><input type="text" id="eposta" required><br>
+        <label for="vergiNo">Adres</label><input type="text" id="adres" value='Bayrampaşa'required><br>
+        <label for="vergiNo">Telefon</label><input type="number" id="telefon" value='02126160352' required><br>
+        <label for="vergiNo">E- Posta</label><input type="text" id="eposta" value='cagriege@msn.com' required><br>
 		<input type="button" value="Müşteri Ekle" name="musteriEkle" onclick="db.musteriEkle();" id="musteriButon">
+		<br>
+		<input type="button" value="Temizle" name="temizle2" onclick="db.temizle2()" id="temizleButon">
         </form>
    
    
@@ -214,10 +242,10 @@
   <article class='cuatro' >
     <h2>Referanslar</h2>
 	<ul>
-	<li><a href="https://www.w3schools.com/">w3schools</a></li>
-	<li><a href="https://eloquentjavascript.net/">eloquentjavascript</a></li>
-	<li><a href="https://maeyler.github.io/JS/">maeyler.github.io/JS</a></li>
-	<li><a href="https://github.com/cagriege/AdvancedProgramming/blob/master/hw2/index.html">HW2 Student Database</a></li>
+	<li><h2><a href="https://www.w3schools.com/">w3schools</a></h2></li>
+	<li><h2><a href="https://eloquentjavascript.net/">eloquentjavascript</a></h2></li>
+	<li><h2><a href="https://maeyler.github.io/JS/">maeyler.github.io/JS</a></h2></li>
+	<li><h2><a href="https://github.com/cagriege/AdvancedProgramming/blob/master/hw2/index.html">HW2 Student Database</a></h2></li>
 	</ul>
   </article>
   
