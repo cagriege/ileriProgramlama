@@ -1,20 +1,29 @@
 <!DOCTYPE html>
 <html lang="en" >
 <head>
-<link rel="icon" href="https://cagriege.github.io/ileriProgramlama/TermProject/fatura2.png">
+<link rel="icon" href="fatura2.png">
 <meta charset="UTF-8">
  <title>
             E-Fatura | Çağrı Ege
         </title>
 
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css'><link rel="stylesheet" href="./style.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'><link rel="stylesheet" href="./style.css">
 
 
 </head>
 <body>
+    <div id="myModal2" class="modal2">
+
+        <!-- Modal content -->
+        <div class="modal-content2">
+          <span class="close2">&times;</span>
+          <p id="bilgilendirme"></p>
+        </div>
+      
+      </div>
 <script>
 		class Fatura{
-			constructor(faturaId,tip,musteriAdi,sirketAdi,vergiNumara,vergiDaire,iletisim,urunler){
+			constructor(faturaId,tip,musteriAdi,sirketAdi,vergiNumara,vergiDaire,iletisim,urunler,total,satici){
 			this.faturaId=faturaId
 			this.tip=tip
 			this.musteriAdi=musteriAdi
@@ -22,7 +31,9 @@
             this.vergiNumara=vergiNumara
 			this.vergiDaire=vergiDaire
 			this.iletisim=iletisim
-			this.urunler=urunler
+            this.urunler=urunler
+            this.total=total
+			this.satici=satici
            
 			
 			
@@ -118,6 +129,7 @@ temizle2()
 
 }
 	musteriEkle(){
+            
 			var iletisim=[];
             var adsoyad= document.getElementById("adiSoyadi").value;
 			var sirketunvan= document.getElementById("sirketUnvan").value;
@@ -131,10 +143,15 @@ temizle2()
 			var vergiNo=document.getElementById("vergiNo").value;
 			
 		if(db.musteriler.has(vergiNo)==true){
-			window.alert("Müşteri zaten kayıtlı");
+            
+            document.getElementById("bilgilendirme").innerText="Müşteri zaten kayıtlı";
+            //window.alert("Müşteri zaten kayıtlı");
+            modal2.style.display = "block";
 			
 		}else if(vergiNo=="" || musteriTip=="" || adsoyad=="" || sirketunvan=="" || vergiDaire=="" ){
-				window.alert("Tüm alanlar eksiksiz doldurulmalıdır.");
+            document.getElementById("bilgilendirme").innerText="Tüm alanlar eksiksiz doldurulmalıdır.";
+            modal2.style.display = "block";
+				//window.alert("Tüm alanlar eksiksiz doldurulmalıdır.");
 		}
 		
 		else {
@@ -142,26 +159,33 @@ temizle2()
 			const musteri = new  Musteri(musteriTip,adsoyad,sirketunvan,vergiNo,vergiDaire,iletisim);
 			
 			db.musteriler.set(vergiNo,musteri);
-			window.alert("Müşteri başarıyla eklendi.");
+			//localStorage.setItem('user', JSON.stringify(user));
+            document.getElementById("bilgilendirme").innerText="Müşteri başarıyla eklendi.";
+            modal2.style.display = "block";
+			//window.alert("Müşteri başarıyla eklendi.");
     }
 	}
     
         }
        db = new Database(); 
 
+       
 </script>
 <!-- partial:index.partial.html -->
+
 <section>
 <input type="radio" id="profile" value="1" name="tractor" checked='checked' />    
 <input type="radio" id="settings" value="2" name="tractor" />      
 <input type="radio" id="posts" value="3" name="tractor" />
 <input type="radio" id="books" value="4" name="tractor" />
+<input type="radio" id="ssssss" value="5" name="tractor" />
   
   <nav>   
   <label for="profile" class='fa fa-user-plus'></label>
   <label for="settings" class='fa fa-shopping-cart'></label>
   <label for="posts" class='fa fa-print'></label>
-  <label for="books" class='fa fa-file-o'></label>
+  <label for="books" class='fa fa-money'></label>
+  <label for="ssssss" class='fa fa-file-o'></label>
   
   </nav>
 
@@ -171,41 +195,46 @@ temizle2()
         
         <h2>Müşteri Bilgileri</h2>
 		 
-           
-			<label for="musteriTip">Müşteri Tip</label><select form="tipList" id="musteriTip">
+          
+			<label class="yenilabel" for="musteriTip">Müşteri Tip</label><select form="tipList" id="musteriTip">
+			
              <option value="bireysel">Bireysel</option>
 			 <option value="kurumsal">Kurumsal</option>
         </select><br>
-        <label for="adiSoyadi" >Adı Soyadı</label>
+        <label class="yenilabel"for="adiSoyadi" >Adı Soyadı</label>
         <input type="text" id="adiSoyadi" value='Çağrı'required><br>
 
-        <label for="sirketUnvan">Şirket Unvanı</label>
+        <label class="yenilabel"for="sirketUnvan">Şirket Unvanı</label>
         <input type="text" id="sirketUnvan" value='EgelerMobilya' required><br>
 
-        <label for="vergiDaire">Vergi Dairesi</label>
+        <label class="yenilabel"for="vergiDaire">Vergi Dairesi</label>
         <input type="text" id="vergiDaire" value='GOP' required><br>
 
-        <label for="vergiNo">Vergi & Tc No</label>
+        <label class="yenilabel" for="vergiNo">Vergi & Tc No</label>
         <input type="number" id="vergiNo" pattern=".{10,11}" value='1234567891' required><br>
       
         
-        <label for="vergiNo">Adres</label><input type="text" id="adres" value='Bayrampaşa'required><br>
-        <label for="vergiNo">Telefon</label><input type="number" id="telefon" value='02126160352' required><br>
-        <label for="vergiNo">E- Posta</label><input type="text" id="eposta" value='cagriege@msn.com' required><br>
+        <label class="yenilabel" for="vergiNo">Adres</label><input type="text" id="adres" value='Bayrampaşa'required><br>
+        <label class="yenilabel" for="vergiNo">Telefon</label><input type="number" id="telefon" value='02126160352' required><br>
+        <label class="yenilabel" for="vergiNo">E- Posta</label><input type="text" id="eposta" value='cagriege@msn.com' required><br>
 		<input type="button" value="Müşteri Ekle" name="musteriEkle" onclick="db.musteriEkle();" id="musteriButon">
 		<br>
 		<input type="button" value="Temizle" name="temizle2" onclick="db.temizle2()" id="temizleButon">
         </form>
    
-   
+       
   </article>
   
   <article class='dos'id="2">
   
   <h2>İrsaliye</h2>
+   <label class="yenilabel2"for="Soyadi" >Personel İsmi</label>
+           <input type="text" id="personel" value='Şeref Ege'required><br><br><br><br>
    <select name="urunListe" form="urunList" id="urunSecimForm">
             
         </select>	
+		
+		
     <input type="button" value="Ürünleri Getir" onclick="appendToSelect()" id="irsaliye"><br>
 	<select name="musteriListe" form="musteriList" id="musteriSecimForm">
             
@@ -227,7 +256,7 @@ temizle2()
     <select name="siparisListe" form="siparisList" id="siparisSecimForm">
             
         </select><br>
-		<input type="button" value="Siparişleri Getir" id="siparisGetir"onclick="appendToSelect3()" >
+		<input type="button" value="Siparişleri Getir" id="siparisGetir"onclick="appendToSelect3();komisyon();" >
 		
 		 <div id="myModal" class="modal">
                 <div class="modal-content">
@@ -237,11 +266,18 @@ temizle2()
                   </div>
                 </div>
               </div>
-		<input type="button" value="Fatura Yazdır" id="faturaYazdir" onclick="printTicket()" >
+        <input type="button" value="Fatura Yazdır" id="faturaYazdir" onclick="printTicket()" >
+        
   </article>
   
-  <article class='cuatro' >
-    <h2>Referanslar</h2>
+  <article class='cuatro' > <h2>Komisyon Detay</h2>
+    <p id="komi"></p>
+    <input type="button" value="Güncelle" id="komisyongetir"onclick="komisyon();" >
+    
+  </article>
+  
+  <article class='cinco' >
+   <h2>Referanslar</h2>
 	<ul>
 	<li><h2><a href="https://www.w3schools.com/">w3schools</a></h2></li>
 	<li><h2><a href="https://eloquentjavascript.net/">eloquentjavascript</a></h2></li>
@@ -249,7 +285,6 @@ temizle2()
 	<li><h2><a href="https://github.com/cagriege/AdvancedProgramming/blob/master/hw2/index.html">HW2 Student Database</a></h2></li>
 	</ul>
   </article>
-  
 </section>
 
  <script>
@@ -301,6 +336,19 @@ temizle2()
 }
 var dataURL = canvas.toDataURL('image/png',0.92);
 console.log(dataURL);
+
+var modal2 = document.getElementById("myModal2");
+var span2 = document.getElementsByClassName("close2")[0];
+span2.onclick = function() {
+  modal2.style.display = "none";
+
+}
+
+window.onclick = function(event) {
+  if (event.target == modal2) {
+    modal2.style.display = "none";
+  }
+}
 var modal = document.getElementById('myModal');
 var span = document.getElementsByClassName("close")[0];
 span.onclick = function() {
@@ -309,9 +357,13 @@ span.onclick = function() {
 		
 
 		function siparisOnayla(){
-			
-			var siparisNo= (db.siparisler.size+1000).toString();
-			
+            var total=0;
+            for(let x of urunData){
+                total+=parseInt(x[3]);
+
+            }
+			var siparisNo= makeid();
+			var satici=document.getElementById("personel").value;
 			var e2=document.getElementById("musteriSecimForm");
 			var value2=e2.options[e2.selectedIndex].value;
 			
@@ -322,20 +374,24 @@ span.onclick = function() {
 			var vergiDaire=db.musteriler.get(value2).vergiDaire;
 			var iletisim=db.musteriler.get(value2).iletisim;
 			
-			const fatura= new Fatura(siparisNo,musteriTip,musteriAdi,sirketAdi,vergiNumara,vergiDaire,iletisim,urunData)
+			const fatura= new Fatura(siparisNo,musteriTip,musteriAdi,sirketAdi,vergiNumara,vergiDaire,iletisim,urunData,total,satici);
 			db.siparisler.set(siparisNo,fatura);
+			localStorage.setItem(siparisNo,fatura);
 			temizle();
 		}
 		var htmlTxt2=" ";
 		var urunData=[];
 		function temizle(){
 			document.getElementById("ozet").innerHTML="";
+			document.getElementById("personel").value="";
 			document.getElementById("urunSecimForm").value="";
 			document.getElementById("musteriSecimForm").value="";
 			urunData=[];
 			htmlTxt2=" ";
 			
 		}
+		
+		
 		function appendToSelect3(){
 		
 		var htmlTxt3="";
@@ -350,7 +406,15 @@ span.onclick = function() {
         document.getElementById("siparisSecimForm").innerHTML=htmlTxt3;
 		}
 		
-		
+		function makeid() {
+   var result           = '';
+   var characters       = 'ABCDEF0123456789';
+   for ( var i = 0; i < 8; i++ ) {
+      result += characters.charAt(Math.floor(Math.random() * 8));
+   }
+   return result;
+}
+
 		
         function appendToSelect2(){
 		if(db.musteriler.size==0){
@@ -366,7 +430,9 @@ span.onclick = function() {
             
         }
         document.getElementById("musteriSecimForm").innerHTML=htmlTxt;
+	
 		}
+		
     }   
         
         function appendToSelect(){
@@ -384,6 +450,26 @@ span.onclick = function() {
         }
         document.getElementById("urunSecimForm").innerHTML=htmlTxt;
     }   
+	
+	function komisyon(){
+	
+	var toplam;
+    
+	var htmlTxt4="<table><tr><td>Satışı Yapan Personel</td><td>Sipariş Tutarı</td><td> Komisyon Oranı</td><td>Hakediş</td></tr>";
+	
+	
+	for(let x of db.siparisler){
+        htmlTxt4+='<tr>';
+	htmlTxt4+='<td>'+x[1].satici+'</td><td>'+x[1].total+"</td><td> - %5 - </td><td>"+(x[1].total)*0.05+'</td>';
+	htmlTxt4+='</tr>';
+	
+    }
+    htmlTxt4+='</table>';
+	document.getElementById("komi").innerHTML=htmlTxt4;
+	
+	
+	
+	}
          function ozetYazdir(){
 		 
 		 var urunler=[];
@@ -399,6 +485,7 @@ span.onclick = function() {
 		
         urunler=[db.urunler.get(value).urunId,db.urunler.get(value).urunAdi,1,db.urunler.get(value).urunFiyat];
 		}else{
+            
 			window.alert("Doğru seçim yapılmadı");
 		}
 		document.getElementById("ozet").innerHTML=htmlTxt2;
@@ -409,4 +496,5 @@ span.onclick = function() {
         </script>
 
 </body>
+
 </html>
