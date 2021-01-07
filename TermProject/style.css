@@ -6,6 +6,14 @@
 * {margin:0;padding:0;border: 0 none;position: relative;}
 [class="fa"]:before {font-family: 'fontawesome', sans-serif;}
 
+
+#ssssss:checked ~ .cinco{
+  display: block;
+ transform: scale(1);
+ transition-delay: .5s; 
+ 
+}
+
 .canvas-container {
     position: relative;
     max-width: 550px;
@@ -52,8 +60,8 @@
   }
 html {
   background: #e29494;
-  width: 100%;
-  height: 100%;
+  width: %100;
+  height: %100;
   font-family: dosis, sans-serif;
   font-weight: 450;
   color: #000;
@@ -61,10 +69,10 @@ html {
 
 section {
   background:  #b4f5d5;
-  width: 80vw;
+  width: 88%;
   max-width: 60rem;
   min-width: 600px;
-  height: 50rem;
+  height: 67rem;
   margin: 4rem auto;
   box-shadow: 0 0 6px rgba(0,0,0,.4);
 }
@@ -155,7 +163,7 @@ nav {
 }
 nav:after {
   content:'';
-  width: 25%;
+  width: 20%;
   height: 5rem;
   background: #BEE3D1;
   position: absolute;
@@ -175,7 +183,31 @@ select {
 	width:180px;
 }
 label {
-  width: 25%;
+  width: 20%;
+  float: left;
+  color: #000;
+  text-align: center;
+  cursor: pointer;
+  transition: .5s;
+  z-index: 2;
+  font-size: 1.6rem;
+}
+#ozet{
+  margin-left: 245px;
+  font-size: xx-large;
+}
+.yenilabel {
+  width: 50%;
+  float: left;
+  color: #000;
+  text-align: center;
+  cursor: pointer;
+  transition: .5s;
+  z-index: 2;
+  font-size: 1.6rem;
+}
+.yenilabel2 {
+  width: 35%;
   float: left;
   color: #000;
   text-align: center;
@@ -185,22 +217,26 @@ label {
   font-size: 1.6rem;
 }
 #temizle{
-	margin-left:45px;
+  margin-left:45px;
+  left:30%;
 	margin-bottom:15px;
   font-size: 1.6rem;
   font-weight: 400;
   text-indent: 0.2rem;
   text-align:center;
-  width:250px;
+  width:300px;
+  height: 100px;
 }
 #siparisOnayla{
-	margin-left:45px;
+  margin-left:45px;
+  left:30%; 
 	margin-bottom:15px;
   font-size: 1.6rem;
   font-weight: 400;
   text-indent: 0.2rem;
   text-align:center;
-  width:250px;
+  width:300px;
+  height: 100px;
 }
 #faturaYazdir{
 	
@@ -208,7 +244,8 @@ label {
   font-size: 1.6rem;
   font-weight: 400;
   text-indent: 0.1rem;
-  width:200px;
+  width:300px;
+  height: 100px;
 }
 #musteriButon{
 	margin-left:150px;
@@ -232,19 +269,22 @@ label {
 	
 }
 #irsaliye{
+  left: 18%;
 	margin-left:0px;
 	margin-bottom:15px;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   font-weight: 400;
   text-indent: 0.2rem;
   text-align:center;
-  width:350px;
+  width:300px;
+  height: 100px;
 }
 #siparisSecimForm{
 	margin-top:70px;
   font-size: 1.6rem;
   font-weight: 200;
   width:300px;
+  height: 100px;
   text-indent: 0.2rem;
 	
 }
@@ -254,13 +294,25 @@ label {
   font-weight: 400;
   text-indent: 0.1rem;
   width:300px;
+  height: 100px;
+	
+}
+#komisyongetir{
+  margin-bottom:150px;
+  left: 33%;
+  font-size: 1.6rem;
+  font-weight: 400;
+  text-indent: 0.1rem;
+  width:300px;
+  height: 65px;
 	
 }
 #urunSecimForm{
 	margin-bottom:10px;
   font-size: 1.6rem;
   font-weight: 200;
-  width:200px;
+  width:300px;
+  height: 100px;
   text-indent: 0.2rem;
 }
 #musteriSecimForm{
@@ -268,7 +320,8 @@ label {
   font-size: 1.6rem;
   font-weight: 200;
   text-indent: 0.2rem;
-  width:200px;
+  width:300px;
+  height: 100px;
 }
 label:hover {color: #1E6743;}
 label:before {
@@ -291,14 +344,17 @@ label:before {
   left: 0;
 }
 #settings:checked ~ nav:after {
-  left:25%;
+  left:20%;
   border-top: 0 none;
 }
 #posts:checked ~ nav:after {
-  left: 50%;
+  left: 40%;
 }
 #books:checked ~ nav:after {
-  left: 75%;
+  left: 60%;
+}
+#ssssss:checked ~ nav:after {
+  left: 80%;
 }
 
 #profile:checked ~ .uno,
@@ -311,3 +367,53 @@ label:before {
 }
 a {color: rgba(0,0,0,.4)}
 a:hover {color: rgba(0,0,0,.2)}
+
+.modal2 {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 300px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content2 {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close2 {
+  color: #aaaaaa;
+  float: right;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.close2:hover,
+.close2:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+table {
+  width:100%;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px;
+  text-align: left;
+}
